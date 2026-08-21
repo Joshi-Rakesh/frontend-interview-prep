@@ -3,7 +3,7 @@ import { Outlet } from "react-router-dom";
 import AppHeader from "../header/AppHeader";
 const { Content } = AntLayout;
 
-export default function Layout() {
+export default function AppLayout() {
   const { token } = theme.useToken();
 
   return (

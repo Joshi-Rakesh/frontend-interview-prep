@@ -1,15 +1,15 @@
 import { createBrowserRouter, Navigate } from "react-router-dom";
-import Layout from "./layout/Layout";
 import ReactQuestionPage from "./pages/ReactQuestionPage";
 import JsQuestionPage from "./pages/JsQuestionPage";
 import QuestionLayout from "./layout/QuestionLayout";
 import ReactTheoryPage from "./pages/ReactTheoryPage";
 import JsTheoryPage from "./pages/JsTheoryPage";
+import AppLayout from "./layout/AppLayout";
 
 export const routes = createBrowserRouter([
   {
     path: "/",
-    element: <Layout />,
+    element: <AppLayout />,
     children: [
       {
         index: true,
