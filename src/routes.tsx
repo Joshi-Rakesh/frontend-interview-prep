@@ -1,11 +1,10 @@
-import { createBrowserRouter } from "react-router-dom";
-
+import { createBrowserRouter, Navigate } from "react-router-dom";
 import Layout from "./layout/Layout";
-
 import ReactQuestionPage from "./pages/ReactQuestionPage";
 import JsQuestionPage from "./pages/JsQuestionPage";
-
-import InfiniteTimer from "./questions/react/InfiniteTimer";
+import QuestionLayout from "./layout/QuestionLayout";
+import ReactTheoryPage from "./pages/ReactTheoryPage";
+import JsTheoryPage from "./pages/JsTheoryPage";
 
 export const routes = createBrowserRouter([
   {
@@ -14,30 +13,43 @@ export const routes = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <ReactQuestionPage />,
+        element: <Navigate to="react/practical" />,
       },
 
       {
         path: "react",
+        element: <QuestionLayout />,
         children: [
           {
             index: true,
+            element: <Navigate to="practical" />,
+          },
+          {
+            path: "practical",
             element: <ReactQuestionPage />,
           },
-
           {
-            path: "infinite-timer",
-            element: <InfiniteTimer />,
+            path: "theory",
+            element: <ReactTheoryPage />,
           },
         ],
       },
 
       {
         path: "js",
+        element: <QuestionLayout />,
         children: [
           {
             index: true,
+            element: <Navigate to="practical" />,
+          },
+          {
+            path: "practical",
             element: <JsQuestionPage />,
+          },
+          {
+            path: "theory",
+            element: <JsTheoryPage />,
           },
         ],
       },

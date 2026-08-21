@@ -55,17 +55,24 @@ const Calculator = () => {
         <label className="text-start underline">2nd Edition</label>
       </div>
 
-      <Input
-        size="large"
-        className="h-20 text-4xl! tracking-[0.2rem]!"
+      <Input.TextArea
         value={inputValue}
         readOnly
+        autoSize={false}
+        className="h-20 text-4xl! overflow-x-auto whitespace-nowrap"
       />
 
       <div className="grid grid-cols-4 gap-4">
-        {calculatorFunctions.map((func) => {
+        {calculatorFunctions.map((func, index) => {
           return (
-            <Button size="large" onClick={() => funcHandler(func)}>
+            <Button
+              className={
+                index === calculatorFunctions.length - 1 ? "col-span-2" : ""
+              }
+              size="large"
+              onClick={() => funcHandler(func)}
+              key={index}
+            >
               {func}
             </Button>
           );

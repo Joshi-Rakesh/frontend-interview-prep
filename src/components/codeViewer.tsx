@@ -1,12 +1,18 @@
 import { Card, Tag, Tabs, theme } from "antd";
+import {
+  DifficultyColor,
+  type DifficultyType,
+} from "../utility/difficultyColor";
 
 type Props = {
   title: string;
   description?: string;
-  difficulty?: string;
+  difficulty: DifficultyType;
   component: React.ReactNode;
-  code: string;
-  utilityCode?: string;
+  files: {
+    fileName: string;
+    content: string;
+  }[];
 };
 
 export default function CodeViewer({
@@ -14,12 +20,9 @@ export default function CodeViewer({
   description,
   difficulty,
   component,
-  code,
-  utilityCode,
+  files = [],
 }: Props) {
   const { token } = theme.useToken();
-
-  console.log(description, "fsakvjh768");
 
   const codeStyle = {
     margin: 0,
@@ -32,11 +35,21 @@ export default function CodeViewer({
   };
 
   return (
-    <Card extra={difficulty && <Tag color="processing">{difficulty}</Tag>}>
-      <div className="mb-3">
-        <h2 className="text-xl font-semibold">{title}</h2>
-        {description && <p className="mt-2 text-md">{description}</p>}
-      </div>
+    <Card
+      title={
+        <div className="flex flex-col py-3">
+          <p className="text-lg font-bold">{title}</p>
+          {description ? (
+            <p className="text-sm mt-2 text-wrap mr-12">{description}</p>
+          ) : null}
+        </div>
+      }
+      extra={
+        difficulty && (
+          <Tag color={DifficultyColor[difficulty]}>{difficulty}</Tag>
+        )
+      }
+    >
       <div className="grid gap-5 lg:grid-cols-2">
         <Card
           size="small"
@@ -59,24 +72,13 @@ export default function CodeViewer({
         </Card>
 
         <Card size="small" title="Source Code">
-          {utilityCode ? (
-            <Tabs
-              items={[
-                {
-                  key: "component",
-                  label: "Component",
-                  children: <pre style={codeStyle}>{code}</pre>,
-                },
-                {
-                  key: "utility",
-                  label: "Utility",
-                  children: <pre style={codeStyle}>{utilityCode}</pre>,
-                },
-              ]}
-            />
-          ) : (
-            <pre style={codeStyle}>{code}</pre>
-          )}
+          <Tabs
+            items={files?.map((file, index) => ({
+              key: `file-${index}`,
+              label: file.fileName,
+              children: <pre style={codeStyle}>{file.content}</pre>,
+            }))}
+          />
         </Card>
       </div>
     </Card>

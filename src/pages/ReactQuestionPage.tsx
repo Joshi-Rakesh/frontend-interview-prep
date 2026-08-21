@@ -10,8 +10,7 @@ export default function ReactQuestionPage() {
           title={`${index + 1}. ${question.title}`}
           difficulty={question.difficulty}
           component={question.component}
-          code={question.code}
-          utilityCode={question.utilityCode}
+          files={question.files}
           description={question.description}
         />
       ))}
