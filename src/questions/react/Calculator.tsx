@@ -49,7 +49,7 @@ const Calculator = () => {
   };
 
   return (
-    <div className="flex flex-col gap-3 p-8 border rounded-md">
+    <div className="flex flex-col gap-3 p-7 rounded-xl shadow-[0_8px_24px_rgba(0,0,0,0.15)] ring-1 ring-white/10">
       <div className="flex justify-between items-center">
         <label className="text-start">CASIO</label>
         <label className="text-start underline">2nd Edition</label>

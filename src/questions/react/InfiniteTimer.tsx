@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 
 const InfiniteTimer = () => {
   const [count, setCount] = useState(0);
-  const [start, setStart] = useState(true);
+  const [start, setStart] = useState(false);
   const directionRef = useRef(1);
 
   const startStopHandler = () => {
@@ -16,10 +16,10 @@ const InfiniteTimer = () => {
   };
 
   useEffect(() => {
+    if (!start) {
+      return;
+    }
     const timer = setInterval(() => {
-      if (!start) {
-        return;
-      }
       setCount((prev) => {
         if (prev === 5) directionRef.current = -1;
         if (prev === 0) directionRef.current = 1;

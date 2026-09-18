@@ -10,6 +10,8 @@ import InfiniteTimer from "../questions/react/InfiniteTimer";
 import infiniteTimerCode from "../questions/react/InfiniteTimer.tsx?raw";
 import MultipleStateUpdate from "../questions/react/MultipleStateUpdate";
 import multipleStateUpdateCode from "../questions/react/multipleStateUpdate.tsx?raw";
+import SearchableProductList from "../questions/react/SearchableProductList";
+import searchableProductListCode from "../questions/react/searchableProductList.tsx?raw";
 import calculatorUtilityCode from "../utility/calculator.util.ts?raw";
 import { Difficulty } from "../utility/difficultyColor";
 
@@ -18,7 +20,7 @@ export const reactQuestions = [
     id: "infinite-timer",
     title: "Infinite Timer",
     description:
-      "Build a timer that continuously increments every second. The timer should start automatically when the component mounts, update the UI in real time, and properly clean up intervals to avoid memory leaks.",
+      "Build a timer that continuously increments every second. The timer should start once you click start, update the UI in real time, and properly clean up intervals to avoid memory leaks.",
     difficulty: Difficulty.Medium,
     component: <InfiniteTimer />,
     files: [
@@ -93,6 +95,24 @@ export const reactQuestions = [
       {
         fileName: "useDebounce.tsx",
         content: useDebounce,
+      },
+    ],
+  },
+  {
+    id: "searchable-product-list",
+    title: "Searchable Product List",
+    description:
+      "Build a product listing page that fetches products from a remote API and displays them in a responsive card-based layout. Users should be able to search for products by title using a search input, with the displayed list updating dynamically based on the search query",
+    difficulty: Difficulty.Easy,
+    component: <SearchableProductList />,
+    files: [
+      {
+        fileName: "SearchableProductList.tsx",
+        content: searchableProductListCode,
+      },
+      {
+        fileName: "CustomDebounce.tsx",
+        content: customDebounceCode,
       },
     ],
   },

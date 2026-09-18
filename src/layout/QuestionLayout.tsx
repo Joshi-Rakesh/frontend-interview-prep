@@ -12,10 +12,10 @@ export default function QuestionLayout() {
   return (
     <>
       <Tabs
+        className="question-tabs"
         activeKey={activeKey}
         onChange={(key) => {
           const [, section] = location.pathname.split("/");
-
           navigate(`/${section}/${key}`);
         }}
         items={[

@@ -6,8 +6,10 @@ export const Difficulty = {
 
 export type DifficultyType = (typeof Difficulty)[keyof typeof Difficulty];
 
-export const DifficultyColor: Record<DifficultyType, string> = {
-  Easy: "green",
-  Medium: "gold",
-  Hard: "volcano",
+export const DifficultyColor = {
+  Easy: "#10B981",
+  Medium: "#F59E0B",
+  Hard: "#EF4444",
 };
+
+export const DEFAULT_DIFFICULTIES = Object.values(Difficulty);

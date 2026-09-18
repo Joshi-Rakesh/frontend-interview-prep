@@ -1,7 +1,9 @@
-import { Button, Tag } from "antd";
+import { Button } from "antd";
 import { useState } from "react";
+import { useAppTheme } from "../../themeProvider/useAppTheme";
 
 const MultipleStateUpdate = () => {
+  const { darkMode } = useAppTheme();
   const [numbersArray, setNumbersArray] = useState<number[]>([
     ...Array(4).fill(0),
   ]);
@@ -41,8 +43,12 @@ const MultipleStateUpdate = () => {
           </div>
         );
       })}
-      <h1 className="text-center text-lg border p-2 rounded-md">
-        Total: {totalNumbersHandler}
+      <h1
+        className={`text-center text-lg border p-2 rounded-md ${
+          darkMode ? "border-gray-700" : "border-gray-300"
+        }`}
+      >
+        {totalNumbersHandler}
       </h1>
     </div>
   );
