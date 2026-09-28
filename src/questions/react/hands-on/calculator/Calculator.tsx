@@ -1,6 +1,6 @@
 import { Button, Input } from "antd";
 import { useState } from "react";
-import { calculatorFunctions, operators } from "../../utility/calculator.util";
+import { calculatorFunctions, operators } from "./calculator.util";
 
 const Calculator = () => {
   const [inputValue, setInputValue] = useState("");

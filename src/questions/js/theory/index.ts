@@ -1,4 +1,4 @@
-import { Difficulty } from "../utility/difficultyColor";
+import { Difficulty } from "../../../utility/difficultyColor";
 
 export const jsQuestions = [
   {

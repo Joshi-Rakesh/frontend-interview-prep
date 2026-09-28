@@ -1,6 +1,6 @@
 import { Card, Input, Tag, theme } from "antd";
 import { useEffect, useState } from "react";
-import useDebounce from "./customHooks/deouncehook/useDebounce";
+import useDebounce from "../custom-hooks/debounce/useDebounce";
 import Text from "antd/es/typography/Text";
 
 type Product = {

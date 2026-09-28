@@ -1,5 +1,5 @@
 import CodeViewer from "../components/CodeViewer";
-import { reactQuestions } from "../data/reactQuestions";
+import { reactQuestions } from "../questions/react/hands-on";
 import { useDifficultyFilter } from "../hooks/useDifficultyFilter";
 
 export default function ReactQuestionPage() {

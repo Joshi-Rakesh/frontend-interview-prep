@@ -1,6 +1,6 @@
 import { Button } from "antd";
 import { useState } from "react";
-import { useAppTheme } from "../../themeProvider/useAppTheme";
+import { useAppTheme } from "../../../../themeProvider/useAppTheme";
 
 const MultipleStateUpdate = () => {
   const { darkMode } = useAppTheme();

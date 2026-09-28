@@ -1,19 +1,19 @@
-import Calculator from "../questions/react/Calculator";
-import calculatorCode from "../questions/react/Calculator.tsx?raw";
-import CustomDebounce from "../questions/react/customHooks/deouncehook/CustomDebounce";
-import customDebounceCode from "../questions/react/customHooks/deouncehook/CustomDebounce.tsx?raw";
-import useDebounce from "../questions/react/customHooks/deouncehook/useDebounce.tsx?raw";
-import LocalStorageHookUsage from "../questions/react/customHooks/localStorageHook/LocalStorageHookUsage";
-import localStorageHookUsageCode from "../questions/react/customHooks/localStorageHook/LocalStorageHookUsage.tsx?raw";
-import useLocalStorage from "../questions/react/customHooks/localStorageHook/useLocalStorage.tsx?raw";
-import InfiniteTimer from "../questions/react/InfiniteTimer";
-import infiniteTimerCode from "../questions/react/InfiniteTimer.tsx?raw";
-import MultipleStateUpdate from "../questions/react/MultipleStateUpdate";
-import multipleStateUpdateCode from "../questions/react/multipleStateUpdate.tsx?raw";
-import SearchableProductList from "../questions/react/SearchableProductList";
-import searchableProductListCode from "../questions/react/searchableProductList.tsx?raw";
-import calculatorUtilityCode from "../utility/calculator.util.ts?raw";
-import { Difficulty } from "../utility/difficultyColor";
+import Calculator from "./calculator/Calculator";
+import calculatorCode from "./calculator/Calculator.tsx?raw";
+import calculatorUtilityCode from "./calculator/calculator.util.ts?raw";
+import CustomDebounce from "./custom-hooks/debounce/CustomDebounce";
+import customDebounceCode from "./custom-hooks/debounce/CustomDebounce.tsx?raw";
+import useDebounce from "./custom-hooks/debounce/useDebounce.tsx?raw";
+import InfiniteTimer from "./infinite-timer/InfiniteTimer";
+import infiniteTimerCode from "./infinite-timer/InfiniteTimer.tsx?raw";
+import LocalStorageHookUsage from "./custom-hooks/local-storage/LocalStorageHookUsage";
+import localStorageHookUsageCode from "./custom-hooks/local-storage/LocalStorageHookUsage.tsx?raw";
+import useLocalStorage from "./custom-hooks/local-storage/useLocalStorage.tsx?raw";
+import MultipleStateUpdate from "./multiple-state-update/MultipleStateUpdate";
+import multipleStateUpdateCode from "./multiple-state-update/MultipleStateUpdate.tsx?raw";
+import SearchableProductList from "./searchable-product-list/SearchableProductList";
+import searchableProductListCode from "./searchable-product-list/SearchableProductList.tsx?raw";
+import { Difficulty } from "../../../utility/difficultyColor";
 
 export const reactQuestions = [
   {
