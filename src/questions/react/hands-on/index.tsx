@@ -14,6 +14,9 @@ import multipleStateUpdateCode from "./multiple-state-update/MultipleStateUpdate
 import SearchableProductList from "./searchable-product-list/SearchableProductList";
 import searchableProductListCode from "./searchable-product-list/SearchableProductList.tsx?raw";
 import { Difficulty } from "../../../utility/difficultyColor";
+import InfiniteScroll from "./infinite-scroll/InfiniteScroll";
+import infiniteScrollCode from "./infinite-scroll/InfiniteScroll.tsx?raw";
+import userServiceCode from "./infinite-scroll/services/userService.ts?raw";
 
 export const reactQuestions = [
   {
@@ -113,6 +116,24 @@ export const reactQuestions = [
       {
         fileName: "CustomDebounce.tsx",
         content: customDebounceCode,
+      },
+    ],
+  },
+
+  {
+    id: "infinite-scroll",
+    title: "Infinite Scroll",
+    description: "Test Infinite Scroll",
+    difficulty: Difficulty.Medium,
+    component: <InfiniteScroll />,
+    files: [
+      {
+        fileName: "InfiniteScroll.tsx",
+        content: infiniteScrollCode,
+      },
+      {
+        fileName: "userService.ts",
+        content: userServiceCode,
       },
     ],
   },
