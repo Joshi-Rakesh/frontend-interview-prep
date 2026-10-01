@@ -17,6 +17,9 @@ import { Difficulty } from "../../../utility/difficultyColor";
 import InfiniteScroll from "./infinite-scroll/InfiniteScroll";
 import infiniteScrollCode from "./infinite-scroll/InfiniteScroll.tsx?raw";
 import userServiceCode from "./infinite-scroll/services/userService.ts?raw";
+import InvokeModal from "./modal/InvokeModal";
+import invokeModalCode from "./modal/InvokeModal.tsx?raw";
+import modalCode from "./modal/Modal.tsx?raw";
 
 export const reactQuestions = [
   {
@@ -123,7 +126,8 @@ export const reactQuestions = [
   {
     id: "infinite-scroll",
     title: "Infinite Scroll",
-    description: "Test Infinite Scroll",
+    description:
+      "Build a user list that loads additional users as the user scrolls. Fetch users in batches of 50, use an IntersectionObserver to detect when the loading sentinel enters the viewport, append each batch without duplicates, show a loading indicator while a batch is being fetched, and stop requesting users after 10 pages. Clean up the observer when the component unmounts.",
     difficulty: Difficulty.Medium,
     component: <InfiniteScroll />,
     files: [
@@ -134,6 +138,25 @@ export const reactQuestions = [
       {
         fileName: "userService.ts",
         content: userServiceCode,
+      },
+    ],
+  },
+
+  {
+    id: "modal-portal",
+    title: "Modal / React-Portal",
+    description:
+      "Build a reusable modal rendered with a React portal. It should open and close through its controls, close when the backdrop is clicked or Escape is pressed, keep clicks inside the modal from closing it, and prevent background scrolling while open. Clean up the event listener and restore scrolling when the modal closes or unmounts.",
+    difficulty: Difficulty.Medium,
+    component: <InvokeModal />,
+    files: [
+      {
+        fileName: "Modal.tsx",
+        content: modalCode,
+      },
+      {
+        fileName: "InvokeModal.tsx",
+        content: invokeModalCode,
       },
     ],
   },

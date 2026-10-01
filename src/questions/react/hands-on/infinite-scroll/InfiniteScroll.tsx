@@ -47,8 +47,8 @@ const InfiniteScroll = () => {
   return (
     <div className="flex flex-col items-start gap-2 w-full">
       <ul className="list-disc pl-6">
-        {users?.map((user) => {
-          return <li key={user.id}>{user.name}</li>;
+        {users?.map((user, index) => {
+          return <li key={index}>{user.name}</li>;
         })}
       </ul>
       <div
