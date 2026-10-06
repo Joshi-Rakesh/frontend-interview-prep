@@ -20,6 +20,11 @@ import userServiceCode from "./infinite-scroll/services/userService.ts?raw";
 import InvokeModal from "./modal/InvokeModal";
 import invokeModalCode from "./modal/InvokeModal.tsx?raw";
 import modalCode from "./modal/Modal.tsx?raw";
+import PaginationUsage from "./pagination/PaginationUsage";
+import paginationUsageCode from "./pagination/PaginationUsage.tsx?raw";
+import paginationCode from "./pagination/Pagination.tsx?raw";
+import paginationUtileCode from "./pagination/utils/paginationUtils.ts?raw";
+import paginationInterface from "./pagination/interface.ts?raw";
 
 export const reactQuestions = [
   {
@@ -157,6 +162,32 @@ export const reactQuestions = [
       {
         fileName: "InvokeModal.tsx",
         content: invokeModalCode,
+      },
+    ],
+  },
+
+  {
+    id: "pagination",
+    title: "Pagination",
+    description: "Pagination Component",
+    difficulty: Difficulty.Easy,
+    component: <PaginationUsage />,
+    files: [
+      {
+        fileName: "Pagination.tsx",
+        content: paginationCode,
+      },
+      {
+        fileName: "PaginationUsage.tsx",
+        content: paginationUsageCode,
+      },
+      {
+        fileName: "paginationUtils.ts",
+        content: paginationUtileCode,
+      },
+      {
+        fileName: "interface.ts",
+        content: paginationInterface,
       },
     ],
   },
