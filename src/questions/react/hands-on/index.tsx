@@ -25,6 +25,13 @@ import paginationUsageCode from "./pagination/PaginationUsage.tsx?raw";
 import paginationCode from "./pagination/Pagination.tsx?raw";
 import paginationUtileCode from "./pagination/utils/paginationUtils.ts?raw";
 import paginationInterface from "./pagination/interface.ts?raw";
+import breadcrumbsCode from "./breadcrumbs/Breadcrumbs.tsx?raw";
+import breadcrumbsLayoutCode from "./breadcrumbs/BreadCrumbsLayout.tsx?raw";
+import productCategoriesCode from "./breadcrumbs/products/ProductCategories.tsx?raw";
+import productsCode from "./breadcrumbs/products/Products.tsx?raw";
+import productDetailsCode from "./breadcrumbs/products/ProductDetails.tsx?raw";
+import routesCode from "../../../routes.tsx?raw";
+import { Outlet } from "react-router-dom";
 
 export const reactQuestions = [
   {
@@ -188,6 +195,39 @@ export const reactQuestions = [
       {
         fileName: "interface.ts",
         content: paginationInterface,
+      },
+    ],
+  },
+  {
+    id: "breadcrumbs",
+    title: "BreadCrumbs",
+    description: "BreadCrumb Component",
+    difficulty: Difficulty.Medium,
+    component: <Outlet />,
+    files: [
+      {
+        fileName: "Breadcrumbs.tsx",
+        content: breadcrumbsCode,
+      },
+      {
+        fileName: "BreadCrumbsLayout.tsx",
+        content: breadcrumbsLayoutCode,
+      },
+      {
+        fileName: "ProductCategories.tsx",
+        content: productCategoriesCode,
+      },
+      {
+        fileName: "Products.tsx",
+        content: productsCode,
+      },
+      {
+        fileName: "ProductDetails.tsx",
+        content: productDetailsCode,
+      },
+      {
+        fileName: "routes.tsx",
+        content: routesCode,
       },
     ],
   },

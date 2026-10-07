@@ -1,7 +1,7 @@
 import { Card, theme } from "antd";
 import { useEffect, useState } from "react";
-import type { Product } from "./interface";
 import Pagination from "./Pagination";
+import type { Product } from "../../../../interface/products";
 
 const PAGE_SIZE = 10;
 
