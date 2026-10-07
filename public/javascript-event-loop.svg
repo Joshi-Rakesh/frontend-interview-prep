@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 250" role="img" aria-labelledby="title description">
+  <title id="title">JavaScript event loop</title>
+  <desc id="description">Synchronous code runs on the call stack, host APIs schedule asynchronous work, and the event loop processes microtasks and tasks when the stack is clear.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M0 0 8 4 0 8Z" fill="#64748b" />
+    </marker>
+  </defs>
+  <rect width="900" height="250" rx="12" fill="#f8fafc" />
+  <g font-family="Segoe UI, sans-serif" font-size="16" text-anchor="middle">
+    <g fill="#fff" stroke="#94a3b8" stroke-width="2">
+      <rect x="28" y="80" width="170" height="76" rx="8" />
+      <rect x="265" y="80" width="170" height="76" rx="8" />
+      <rect x="500" y="30" width="170" height="70" rx="8" />
+      <rect x="500" y="150" width="170" height="70" rx="8" />
+      <rect x="730" y="80" width="142" height="76" rx="8" />
+    </g>
+    <g fill="#0f172a" font-weight="600">
+      <text x="113" y="123">Call stack</text>
+      <text x="350" y="123">Host APIs</text>
+      <text x="585" y="72">Microtask queue</text>
+      <text x="585" y="192">Task queue</text>
+      <text x="801" y="123">Event loop</text>
+    </g>
+    <g stroke="#64748b" stroke-width="2" fill="none" marker-end="url(#arrow)">
+      <path d="M200 118h58" />
+      <path d="M437 104 492 70" />
+      <path d="M437 132 492 180" />
+      <path d="M672 65 724 98" />
+      <path d="M672 185 724 138" />
+      <path d="M801 76V34H113V72" />
+    </g>
+  </g>
+</svg>

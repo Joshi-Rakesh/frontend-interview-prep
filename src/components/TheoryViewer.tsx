@@ -14,7 +14,7 @@ type Props = {
 const TheoryViewer = ({ title, description, difficulty }: Props) => {
   return (
     <Card
-      title={<p className="text-wrap p-3 mr-5">{title}</p>}
+      title={<p className="text-wrap p-2 mr-5">{title}</p>}
       extra={
         difficulty && (
           <Tag color={DifficultyColor[difficulty]}>{difficulty}</Tag>

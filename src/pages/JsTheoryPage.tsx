@@ -1,6 +1,6 @@
 import TheoryViewer from "../components/TheoryViewer";
-import { jsQuestions } from "../questions/js/theory";
 import { useDifficultyFilter } from "../hooks/useDifficultyFilter";
+import { jsQuestions } from "../questions/js/theory";
 
 const JsTheoryPage = () => {
   const { selectedDifficulties } = useDifficultyFilter();
