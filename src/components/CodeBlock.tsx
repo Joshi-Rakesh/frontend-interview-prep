@@ -66,7 +66,7 @@ const CodeBlock = ({
                   border: `1px solid ${token.colorBorder}`,
                   borderLeft: `4px solid ${token.colorPrimary}`,
                   borderRadius: token.borderRadius,
-                  maxHeight: 300,
+                  maxHeight: 420,
                   overflow: "auto",
                 }}
               >

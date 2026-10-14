@@ -80,7 +80,7 @@ export const jsQuestions = [
       "copy.score = 4; // original.score is now 4",
       "```",
       "",
-      "The reference itself is copied; assigning an object does not automatically clone its properties. `null` is a primitive even though `typeof null` historically returns `\"object\"`.",
+      'The reference itself is copied; assigning an object does not automatically clone its properties. `null` is a primitive even though `typeof null` historically returns `"object"`.',
       "",
       "**Follow-up questions**",
       "- Why can two objects with identical properties compare unequal?",
@@ -211,7 +211,8 @@ export const jsQuestions = [
   },
   {
     id: "prototypes",
-    title: "What is the prototype chain, and how does inheritance work in JavaScript?",
+    title:
+      "What is the prototype chain, and how does inheritance work in JavaScript?",
     difficulty: Difficulty.Medium,
     description: markdown(
       "Objects can have another object as their prototype. When a property is not found directly on an object, JavaScript looks up the prototype chain until it finds the property or reaches `null`.",
@@ -239,7 +240,7 @@ export const jsQuestions = [
       "",
       "Promise reactions and `queueMicrotask` callbacks use the microtask queue. Timers and many host events use task queues. After a task completes, the runtime drains microtasks before moving on to another task, though exact host scheduling details can vary.",
       "",
-      "![JavaScript event loop](/javascript-event-loop.svg \"width=760\")",
+      '![JavaScript event loop](/javascript-event-loop.svg "width=760")',
       "",
       "```js",
       "console.log('sync');",
@@ -466,7 +467,8 @@ export const jsQuestions = [
   },
   {
     id: "garbage-collection-memory-leaks",
-    title: "How does garbage collection work, and what causes memory leaks in JavaScript?",
+    title:
+      "How does garbage collection work, and what causes memory leaks in JavaScript?",
     difficulty: Difficulty.Hard,
     description: markdown(
       "JavaScript runtimes automatically reclaim memory that is no longer reachable from program roots, such as active stack values and global references. Modern engines commonly use tracing strategies related to mark-and-sweep, with optimizations for different object lifetimes.",

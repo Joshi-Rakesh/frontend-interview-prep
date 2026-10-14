@@ -4,6 +4,7 @@ import {
   type DifficultyType,
 } from "../utility/difficultyColor";
 import CodeBlock from "./CodeBlock";
+import TerminalCodeViewer from "./TerminalCodeViewer.tsx";
 
 const PANEL_HEIGHT = 500;
 
@@ -26,6 +27,7 @@ type Props = {
     fileName: string;
     content: string;
   }[];
+  runnable?: boolean;
 };
 
 export default function CodeViewer({
@@ -34,6 +36,7 @@ export default function CodeViewer({
   difficulty,
   component,
   files = [],
+  runnable = false,
 }: Props) {
   return (
     <Card
@@ -53,39 +56,46 @@ export default function CodeViewer({
         )
       }
     >
-      <div className="grid gap-5 lg:grid-cols-2">
-        <Card
-          size="small"
-          title="Preview"
-          className="h-full"
-          styles={{
-            body: {
-              height: PANEL_HEIGHT,
-              overflow: "auto",
-            },
-          }}
-        >
-          <div className="flex min-h-full items-center justify-center">
-            {component}
-          </div>
-        </Card>
+      {runnable ? (
+        <TerminalCodeViewer
+          title={files[0]?.fileName ?? "JavaScript"}
+          code={files[0]?.content ?? ""}
+        />
+      ) : (
+        <div className="grid gap-5 lg:grid-cols-2">
+          <Card
+            size="small"
+            title="Preview"
+            className="h-full"
+            styles={{
+              body: {
+                height: PANEL_HEIGHT,
+                overflow: "auto",
+              },
+            }}
+          >
+            <div className="flex min-h-full items-center justify-center">
+              {component}
+            </div>
+          </Card>
 
-        <Card size="small" title="Source Code">
-          <Tabs
-            className="source-tabs"
-            items={files?.map((file, index) => ({
-              key: `file-${index}`,
-              label: file.fileName,
-              children: (
-                <CodeBlock
-                  file={file.content}
-                  language={getLanguage(file.fileName)}
-                />
-              ),
-            }))}
-          />
-        </Card>
-      </div>
+          <Card size="small" title="Source Code">
+            <Tabs
+              className="source-tabs"
+              items={files?.map((file, index) => ({
+                key: `file-${index}`,
+                label: file.fileName,
+                children: (
+                  <CodeBlock
+                    file={file.content}
+                    language={getLanguage(file.fileName)}
+                  />
+                ),
+              }))}
+            />
+          </Card>
+        </div>
+      )}
     </Card>
   );
 }
